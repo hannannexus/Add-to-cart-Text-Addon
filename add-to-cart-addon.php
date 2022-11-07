@@ -13,15 +13,14 @@
 
  /* Change Add to cart text changer in shop page */ 
  if( !function_exists('wabt_change_button_text')){
-    function wabt_change_button_text (){
+    function wabt_change_button_text ($default_text ){
         $cart_btn_text = get_option('wabt_text_one');
 
-        if(empty($cart_btn_text)){
-            $cart_btn_text = 'Add to Basket';
+        if(!empty($cart_btn_text)){
             return $cart_btn_text;
         }
         
-        return $cart_btn_text;
+        return $default_text;
     }
  }
 

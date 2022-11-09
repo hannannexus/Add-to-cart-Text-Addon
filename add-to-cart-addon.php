@@ -50,6 +50,7 @@ function wabt_new_field_settings_product_tab($settings ){
  $add_to_cart_btn_text = get_option('wabt_text_one');
  
   $settings = array(
+   
     array(
       'title'=>'Change Button text',
       'id'=>'wabt_change_text',
@@ -61,7 +62,12 @@ function wabt_new_field_settings_product_tab($settings ){
       'type'=>'text',
       'name'=>'wabt_text_one',
       'value'=> $add_to_cart_btn_text 
+    ),
+    array(
+      'id'=>'wabt_change_text',
+      'type'=>'sectionend',
     )
+   
   );
  
  return $settings;

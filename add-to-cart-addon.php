@@ -49,26 +49,26 @@ function wabt_new_field_settings_product_tab($settings ){
  
  $add_to_cart_btn_text = get_option('wabt_text_one');
  
-  $settings = array(
-   
-    array(
+ $settings[] = array(
       'title'=>'Change Button text',
       'id'=>'wabt_change_text',
       'type'=>'title',
-    ),
-   array(
+    );
+ 
+ $settings[] = array(
       'title'=>'Give Button text',
       'id'=>'wabt_text_one',
       'type'=>'text',
       'name'=>'wabt_text_one',
       'value'=> $add_to_cart_btn_text 
-    ),
-    array(
+    );
+ 
+  
+$settings[] = array(
+   
       'id'=>'wabt_change_text',
       'type'=>'sectionend',
-    )
-   
-  );
+    );
  
  return $settings;
 }

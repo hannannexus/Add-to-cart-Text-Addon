@@ -43,3 +43,27 @@ function wabt_display_add_to_cart_button_text(){
 }
 
  add_action('admin_init','wabt_add_new_to_add_cart');
+
+/* add new  settings for product general tab*/
+function wabt_new_field_settings_product_tab($settings ){
+ 
+ $add_to_cart_btn_text = get_option('wabt_text_one');
+ 
+  $settings = array(
+    array(
+      'title'=>'Change Button text',
+      'id'=>'wabt_change_text',
+      'type'=>'title',
+    ),
+   array(
+      'title'=>'Give Button text',
+      'id'=>'wabt_text_one',
+      'type'=>'text',
+      'name'=>'wabt_text_one',
+      'value'=> $add_to_cart_btn_text 
+    )
+  );
+ 
+ return $settings;
+}
+add_filter('woocommerce_products_general_settings','wabt_new_field_settings_product_tab');
